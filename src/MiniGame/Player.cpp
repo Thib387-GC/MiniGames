@@ -35,5 +35,5 @@ void Player::Shoot()
 
 	
 
-	GameManager::GetInstance()->m_SceneManagerInstance->GetCurrentScene()->AddEntity<Bullet*>();
+	GameManager::GetInstance()->m_SceneManagerInstance->GetCurrentScene()->AddEntity<Bullet>();
 }

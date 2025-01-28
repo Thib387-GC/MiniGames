@@ -74,14 +74,16 @@ int GameManager::GameLoop()
     deltatime = Clock.restart();
 
 
-    m_Instance->m_PlayerInstance = m_Instance->m_SceneManagerInstance->GetCurrentScene()->AddEntity<Player>();
 
     m_Instance->m_SceneManagerInstance = new SceneManager();
     m_Instance->m_SceneManagerInstance->NewScene(m_Instance->m_SceneManagerInstance->m_sceneName[MENU], GameManager::MENU);
+    m_Instance->m_SceneManagerInstance->NewScene(m_Instance->m_SceneManagerInstance->m_sceneName[LEVEL_1], GameManager::LEVEL_1);
+
     m_Instance->m_SceneManagerInstance->ChangeScene(MENU);
 
    
    
+    m_Instance->m_PlayerInstance = m_Instance->m_SceneManagerInstance->GetCurrentScene()->AddEntity<Player>();
 
 
     while (window.isOpen()) {
